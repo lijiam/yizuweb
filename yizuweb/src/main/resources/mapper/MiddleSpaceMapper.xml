@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.clt.yizu.mapper.MiddleSpaceMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.clt.yizu.model.MiddleSpace" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="university" property="university" jdbcType="VARCHAR" />
+    <result column="space_type" property="spaceType" jdbcType="VARCHAR" />
+    <result column="size" property="size" jdbcType="VARCHAR" />
+    <result column="activity_type" property="activityType" jdbcType="VARCHAR" />
+    <result column="equipment" property="equipment" jdbcType="VARCHAR" />
+    <result column="open_time" property="openTime" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="way" property="way" jdbcType="VARCHAR" />
+    <result column="person_count" property="personCount" jdbcType="VARCHAR" />
+    <result column="morning_price" property="morningPrice" jdbcType="VARCHAR" />
+    <result column="noon_price" property="noonPrice" jdbcType="VARCHAR" />
+    <result column="evening_price" property="eveningPrice" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

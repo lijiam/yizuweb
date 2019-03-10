@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.clt.yizu.mapper.SpaceMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.clt.yizu.model.Space" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="img_url" property="imgUrl" jdbcType="VARCHAR" />
+    <result column="title_name" property="titleName" jdbcType="VARCHAR" />
+    <result column="school" property="school" jdbcType="VARCHAR" />
+    <result column="space_type" property="spaceType" jdbcType="VARCHAR" />
+    <result column="size" property="size" jdbcType="VARCHAR" />
+    <result column="activity_type" property="activityType" jdbcType="VARCHAR" />
+    <result column="equipment" property="equipment" jdbcType="VARCHAR" />
+    <result column="open_time" property="openTime" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="route" property="route" jdbcType="VARCHAR" />
+    <result column="people_count" property="peopleCount" jdbcType="VARCHAR" />
+    <result column="people" property="people" jdbcType="VARCHAR" />
+    <result column="morning_price" property="morningPrice" jdbcType="VARCHAR" />
+    <result column="noon_price" property="noonPrice" jdbcType="VARCHAR" />
+    <result column="evening_price" property="eveningPrice" jdbcType="VARCHAR" />
+    <result column="space_introduce" property="spaceIntroduce" jdbcType="VARCHAR" />
+    <result column="default_price" property="defaultPrice" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getSearchAll" resultType="Space">
+    SELECT * FROM space WHERE 1=1
+    <if test="selectedSchool != null and selectedSchool != '' ">
+      AND school = #{selectedSchool}
+    </if>
+    <if test="selectedSpace != null and selectedSpace != '' ">
+      AND space_type = #{selectedSpace}
+    </if>
+    <if test="City != null and City != '' ">
+      AND city = #{City}
+    </if>
+    <if test="Province != null and Province != '' ">
+      AND province = #{Province}
+    </if>
+    <if test="selectedActivity != null and selectedActivity != '' ">
+      AND activity_type LIKE CONCAT('%',#{selectedActivity},'%' )
+    </if>
+    <if test="selectedPeople != null and selectedPeople != '' ">
+      AND people_count = #{selectedPeople}
+    </if>
+  </select>
+</mapper>
